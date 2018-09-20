@@ -146,7 +146,7 @@ Nothing
 
 **Purpose**
 
-Allows you to freeze an object including its nested objects and properties
+Allows you to freeze an object including its nested objects and properties.
 
 **Type**
 
