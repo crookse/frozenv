@@ -113,7 +113,7 @@ Example
     console.log(myObject.status); // Outputs: 'I am frozen.'
     ```
 
-### Frozenv.freezeObject(namespace, object)
+### Frozenv.freezeObject(object)
 
 Purpose
 
