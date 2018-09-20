@@ -4,6 +4,8 @@ var Frozenv = require(__dirname + '/index.js');
 var assert = require('assert').strict;
 var variables;
 
+console.log('[Frozenv] Running tests...');
+
 //
 // Assert that environment variables are set using one namespace
 //
@@ -99,3 +101,5 @@ assert.throws(() => {
   Frozenv.freezeObject(parentObject);
   parentObject.childObject.status = 'change';
 }, TypeError, "An error should be thrown when trying to change the object's child object's properties.");
+
+console.log('[Frozenv] All tests passed.');
