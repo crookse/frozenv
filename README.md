@@ -75,11 +75,11 @@ This function calls `Frozenv.freezeObject()` to freeze the `variables` argument 
 
 **Parameters**
 
-`namespace {String}`
+`namespace` `{String}`
 
 * The namespace to use under the `process` variable.
 
-`{Object} variables`
+`variables` `{Object}`
 
 * The variables to set as frozen environment variables.
 
@@ -151,9 +151,9 @@ Allows you to freeze an object including its nested objects and properties.
 
 **Parameters**
 
-`namespace {Object}`
+`object` `{Object}`
 
-The object to freeze.
+* The object to freeze.
 
 **Throws**
 
