@@ -41,15 +41,15 @@ $ npm install --save frozenv
 
 ### Frozenv.setVars(namespace, object)
 
-Purpose
+**Purpose**
 
 Allows you to set read-only environment variables under a specific namespace. Any periods in the namespace name will be parsed as a nested namespace. For example, `this.is.my.namespace` will be parsed as `process.this.is.my.namespace` and not `process['this.is.my.namespace']`.
 
-Type
+**Type**
 
 `Function`
 
-Parameters
+**Parameters**
 
 `namespace {String}`
 
@@ -59,15 +59,15 @@ Parameters
 
 * The variables to set as frozen environment variables.
 
-Throws
+**Throws**
 
 Nothing
 
-Returns
+**Returns**
 
 Nothing
 
-Example
+**Example Usage**
 
 * Setting environment variables under a namespace:
 
@@ -98,46 +98,48 @@ Example
     // Require the package
     var Frozenv = require('frozenv');
 
-    // Define your object
-    var myObject = {
-      status: 'I am frozen.'
-    };
+    // Set your environment variables
+    Frozenv.setVars('Garage.Cars', {
+      gti: {
+        make: 'Volkswagen',
+        year: '2009'
+      },
+      cooper_s:
+        make: 'Mini',
+        year: '2004'
+      }
+    });
 
-    // Freeze your object
-    Frozenv.freezeObject(myObject);
-
-    // Try to change your object's property
-    myObject.status = 'I have changed.';
-
-    // Access your object's property
-    console.log(myObject.status); // Outputs: 'I am frozen.'
+    // Access your environment variables
+    console.log(process.Garage.Cars.gti);
+    console.log(process.Garage.Cars.cooper_s);
     ```
 
 ### Frozenv.freezeObject(object)
 
-Purpose
+**Purpose**
 
 Allows you to freeze an object including its nested objects and properties
 
-Type
+**Type**
 
 `Function`
 
-Parameters
+**Parameters**
 
 `namespace {Object}`
 
 The object to freeze.
 
-Throws
+**Throws**
 
 Nothing
 
-Returns
+**Returns**
 
 Nothing
 
-Example
+**Example Usage**
 
 * Freezing an object:
 
