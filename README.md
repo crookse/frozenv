@@ -14,7 +14,7 @@ Frozenv.setVars('Cars', {
     make: 'Volkswagen',
     year: '2009'
   },
-  cooper_s:
+  cooper_s: {
     make: 'Mini',
     year: '2004'
   }
@@ -52,7 +52,7 @@ Frozenv.setVars('Garage.Cars', {
     make: 'Volkswagen',
     year: '2009'
   },
-  cooper_s:
+  cooper_s: {
     make: 'Mini',
     year: '2004'
   }
@@ -105,7 +105,7 @@ Nothing
         make: 'Volkswagen',
         year: '2009'
       },
-      cooper_s:
+      cooper_s: {
         make: 'Mini',
         year: '2004'
       }
@@ -128,7 +128,7 @@ Nothing
         make: 'Volkswagen',
         year: '2009'
       },
-      cooper_s:
+      cooper_s: {
         make: 'Mini',
         year: '2004'
       }
