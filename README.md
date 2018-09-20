@@ -1,8 +1,8 @@
-# crookse.Node
+# Frozenv
 
 Node.js library that helps you set read-only environment variables under a specific namespace.
 
-[![crookse.Node npm version][badge-npm-page-img]](#)
+[![Frozenv npm version][badge-npm-page-img]](#)
 
 ```javascript
 // Require the package
