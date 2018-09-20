@@ -92,7 +92,7 @@ Example
     console.log(process.Cars.cooper_s);
     ```
 
-* Setting environment variables under a nested namepsace:
+* Setting environment variables under a nested namespace:
 
     ```javascript
     // Require the package
