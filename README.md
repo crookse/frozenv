@@ -25,11 +25,6 @@ console.log(process.Cars.gti);
 console.log(process.Cars.cooper_s);
 ```
 
-## Features
-
-* Freezes nested objects and properties
-* Merges preexisting namespaces (e.g., `process.env`) to prevent overwriting configs
-
 ## Installation
 
 ```shell
@@ -71,6 +66,8 @@ Frozenv.setVars('Garage.Cars', {
   }
 });
 ```
+
+This function calls `Frozenv.freezeObject()` to freeze the `variables` argument and all of its nested objects and properties.
 
 **Type**
 
