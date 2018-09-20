@@ -28,7 +28,7 @@ console.log(process.Cars.cooper_s);
 ## Features
 
 * Freezes nested objects and properties
-* Merges namespaces to prevent overwriting configs (including nested namespaces)
+* Merges preexisting namespaces (e.g., `process.env`) to prevent overwriting configs
 
 ## Installation
 
@@ -44,6 +44,33 @@ $ npm install --save frozenv
 **Purpose**
 
 Allows you to set read-only environment variables under a specific namespace. Any periods in the namespace name will be parsed as a nested namespace. For example, `this.is.my.namespace` will be parsed as `process.this.is.my.namespace` and not `process['this.is.my.namespace']`.
+
+If a preexisting namespace is specified, then it must not already be frozen in order for `Frozenv.setVars()` to work. For example, the below will not work because `Garage.Cars` will be frozen after it's used in the first `Frozen.setVars()` call:
+
+```javascript
+// Require the package
+var Frozenv = require('frozenv');
+
+// Set your environment variables
+Frozenv.setVars('Garage.Cars', {
+  gti: {
+    make: 'Volkswagen',
+    year: '2009'
+  },
+  cooper_s:
+    make: 'Mini',
+    year: '2004'
+  }
+});
+
+// Set more environment variables in the Garage.Cars namespace
+Frozenv.setVars('Garage.Cars', {
+  is_350_f_sport: {
+    make: 'Lexus',
+    year: '2017'
+  }
+});
+```
 
 **Type**
 
