@@ -1,0 +1,28 @@
+{
+  "name": "frozenv",
+  "version": "1.0.0",
+  "description": "Node.js library that helps you set read-only environment variables under a specific namespace.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crookse/frozenv.git"
+  },
+  "keywords": [
+    "crookse",
+    "configs",
+    "frozen",
+    "env",
+    "environment",
+    "variables",
+    "read-only"
+  ],
+  "author": "Eric Crooks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crookse/frozenv/issues"
+  },
+  "homepage": "https://github.com/crookse/frozenv#readme"
+}
