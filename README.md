@@ -16,7 +16,7 @@ Frozenv.setVars('Cars', {
   },
   cooper_s: {
     make: 'Mini',
-    year: '2004'
+    year: '2005'
   }
 });
 
@@ -46,11 +46,11 @@ console.log(process.Cars.cooper_s);
 
 **Purpose**
 
-* Allows you to set read-only environment variables under a specific namespace under the `process` variable.
+Allows you to set read-only environment variables under a specific namespace under the `process` variable.
 
-* Note: Periods in the `namespace` argument will create nested namespaces. For example, `Frozenv.setVars('this.is.my.namespace', {})` will create `process.this.is.my.namespace` and not `process['this.is.my.namespace']`.
+* *Note: Periods in the `namespace` argument will create nested namespaces. For example, `Frozenv.setVars('this.is.my.namespace', {})` will create `process.this.is.my.namespace` and not `process['this.is.my.namespace']`.*
 
-* Note: If a preexisting namespace is specified, then it must not already be frozen in order for `Frozenv.setVars()` to work. For example, the below will not work because `Garage.Cars` will be frozen after it's used in the first `Frozen.setVars()` call:
+* *Note: If a preexisting namespace is specified, then it must not already be frozen in order for `Frozenv.setVars()` to work. For example, the below will not work because `Garage.Cars` will be frozen after it's used in the first `Frozen.setVars()` call:*
 
     ```javascript
     // Require the package
@@ -64,7 +64,7 @@ console.log(process.Cars.cooper_s);
       },
       cooper_s: {
         make: 'Mini',
-        year: '2004'
+        year: '2005'
       }
     });
     
@@ -77,31 +77,31 @@ console.log(process.Cars.cooper_s);
     });
     ```
     
-    `Frozenv.setVars('env.MyNamespace', {})` will work because `env` is not frozen until you use it in a `Frozenv.setVars()` call.
+    *`Frozenv.setVars('env.MyNamespace', {})` will work because `env` is not frozen until you use it in a `Frozenv.setVars()` call.*
 
-* Note: This function calls `Frozenv.freezeObject()` to freeze the `variables` argument and all of its nested objects and properties.
+* *Note: This function calls `Frozenv.freezeObject()` to freeze the `variables` argument and all of its nested objects and properties.*
 
 **Type**
 
-* `Function`
+`<Function>`
 
 **Parameters**
 
-* `namespace` `{String}`
+`namespace` `<String>`
 
-    * The namespace to use under the `process` variable.
+* The namespace to use under the `process` variable.
 
-* `variables` `{Object}`
+`variables` `<Object>`
 
-    * The variables to set as frozen environment variables.
+* The variables to set as frozen environment variables.
 
 **Throws**
 
-* Nothing
+Nothing
 
 **Returns**
 
-* Nothing
+Nothing
 
 **Example Usage**
 
@@ -119,7 +119,7 @@ console.log(process.Cars.cooper_s);
       },
       cooper_s: {
         make: 'Mini',
-        year: '2004'
+        year: '2005'
       }
     });
 
@@ -142,7 +142,7 @@ console.log(process.Cars.cooper_s);
       },
       cooper_s: {
         make: 'Mini',
-        year: '2004'
+        year: '2005'
       }
     });
 
@@ -156,25 +156,25 @@ console.log(process.Cars.cooper_s);
 
 **Purpose**
 
-* Allows you to freeze an object including its nested objects and properties.
+Allows you to freeze an object including its nested objects and properties.
 
 **Type**
 
-* `Function`
+`<Function>`
 
 **Parameters**
 
-* `object` `{Object}`
+`object` `<Object>`
 
-    * The object to freeze.
+* The object to freeze.
 
 **Throws**
 
-* Nothing
+Nothing
 
 **Returns**
 
-* Nothing
+Nothing
 
 **Example Usage**
 
