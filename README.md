@@ -27,69 +27,81 @@ console.log(process.Cars.cooper_s);
 
 ## Installation
 
-```shell
-$ cd /path/to/your/project
-$ npm install --save frozenv
-```
+* npm
+
+    ```shell
+    $ cd /path/to/your/project
+    $ npm install --save frozenv
+    ```
+
+* Git
+
+    ```shell
+    $ git clone https://github.com/crookse/frozenv.git /path/to/your/project
+    ````
 
 ## Documentation
 
-### Frozenv.setVars(namespace, object)
+### Frozenv.setVars(namespace, variables)
 
 **Purpose**
 
-Allows you to set read-only environment variables under a specific namespace. Any periods in the namespace name will be parsed as a nested namespace. For example, `this.is.my.namespace` will be parsed as `process.this.is.my.namespace` and not `process['this.is.my.namespace']`.
+* Allows you to set read-only environment variables under a specific namespace under the `process` variable.
 
-If a preexisting namespace is specified, then it must not already be frozen in order for `Frozenv.setVars()` to work. For example, the below will not work because `Garage.Cars` will be frozen after it's used in the first `Frozen.setVars()` call:
+* Note: Periods in the `namespace` argument will create nested namespaces. For example, `Frozenv.setVars('this.is.my.namespace', {})` will create `process.this.is.my.namespace` and not `process['this.is.my.namespace']`.
 
-```javascript
-// Require the package
-var Frozenv = require('frozenv');
+* Note: If a preexisting namespace is specified, then it must not already be frozen in order for `Frozenv.setVars()` to work. For example, the below will not work because `Garage.Cars` will be frozen after it's used in the first `Frozen.setVars()` call:
 
-// Set your environment variables
-Frozenv.setVars('Garage.Cars', {
-  gti: {
-    make: 'Volkswagen',
-    year: '2009'
-  },
-  cooper_s: {
-    make: 'Mini',
-    year: '2004'
-  }
-});
+    ```javascript
+    // Require the package
+    var Frozenv = require('frozenv');
+    
+    // Set your environment variables
+    Frozenv.setVars('Garage.Cars', {
+      gti: {
+        make: 'Volkswagen',
+        year: '2009'
+      },
+      cooper_s: {
+        make: 'Mini',
+        year: '2004'
+      }
+    });
+    
+    // Set more environment variables in the Garage.Cars namespace
+    Frozenv.setVars('Garage.Cars', {
+      is_350_f_sport: {
+        make: 'Lexus',
+        year: '2017'
+      }
+    });
+    ```
+    
+    `Frozenv.setVars('env.MyNamespace', {})` will work because `env` is not frozen until you use it in a `Frozenv.setVars()` call.
 
-// Set more environment variables in the Garage.Cars namespace
-Frozenv.setVars('Garage.Cars', {
-  is_350_f_sport: {
-    make: 'Lexus',
-    year: '2017'
-  }
-});
-```
-
-This function calls `Frozenv.freezeObject()` to freeze the `variables` argument and all of its nested objects and properties.
+* Note: This function calls `Frozenv.freezeObject()` to freeze the `variables` argument and all of its nested objects and properties.
 
 **Type**
 
-`Function`
+* `Function`
 
 **Parameters**
 
-`namespace` `{String}`
+* `namespace` `{String}`
 
-* The namespace to use under the `process` variable.
+    * The namespace to use under the `process` variable.
 
-`variables` `{Object}`
+* `variables` `{Object}`
 
-* The variables to set as frozen environment variables.
+    * The variables to set as frozen environment variables.
 
 **Throws**
 
-Nothing
+* Nothing
 
 **Returns**
 
-Nothing
+* Nothing
 
 **Example Usage**
 
@@ -138,30 +150,31 @@ Nothing
     console.log(process.Garage.Cars.gti);
     console.log(process.Garage.Cars.cooper_s);
     ```
+---
 
 ### Frozenv.freezeObject(object)
 
 **Purpose**
 
-Allows you to freeze an object including its nested objects and properties.
+* Allows you to freeze an object including its nested objects and properties.
 
 **Type**
 
-`Function`
+* `Function`
 
 **Parameters**
 
-`object` `{Object}`
+* `object` `{Object}`
 
-* The object to freeze.
+    * The object to freeze.
 
 **Throws**
 
-Nothing
+* Nothing
 
 **Returns**
 
-Nothing
+* Nothing
 
 **Example Usage**
 
@@ -221,7 +234,5 @@ Nothing
 ## License
 
 [MIT](https://github.com/crookse/frozenv/blob/version/master/LICENSE)
-
----
 
 [badge-npm-page-img]: https://img.shields.io/github/release/crookse/frozenv.svg?style=for-the-badge&label=LATEST%20RELEASE&colorA=black&colorB=black
