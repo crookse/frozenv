@@ -1,6 +1,6 @@
 {
   "name": "frozenv",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Node.js library that helps you set read-only environment variables under a specific namespace.",
   "main": "index.js",
   "scripts": {
